@@ -14,7 +14,7 @@
 	if(customer == null){
 		response.sendRedirect("index.jsp");
 	}
-    ProductDao productDao = new ProductDao();
+    ProductDao productDao = ProductDao.getInstance();
 	int selectedProductId = Integer.parseInt(request.getParameter("id"));
     //List<Product> productsList = productDao.getAllProducts();
     

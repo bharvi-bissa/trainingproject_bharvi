@@ -333,7 +333,7 @@ public class VendorAddProduct extends HttpServlet {
 		
 		product.setWarrantySum(warrantySum);
 		
-		VendorDao vendorDao = new VendorDao();
+		VendorDao vendorDao = VendorDao.getInstance();
 		 boolean status = vendorDao.addProduct(product);
 		 if (status) {
 			String success = "Product added.";

@@ -1,3 +1,27 @@
+/*
+ * Copyright (c) 2018, TechAspect Solutions Private Limited. All Rights Reserved.
+ * TECHASPECT SOLUTIONS PRIVATE LIMITED PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ */
 package com.techaspect.dao;
 
 import java.sql.Connection;
@@ -15,12 +39,45 @@ import com.techaspect.entity.Vendor;
 import com.techaspect.dao.Dao;
 import org.apache.log4j.Logger;
 
+/**
+ * The VendorDao class contains the database operations
+ * related code.
+ * 
+ * This class belongs to Vendor Module. 
+ * 
+ * @author  Bharvi Bissa
+ */
+
+
 public class VendorDao extends Dao{
 	
 	private final static Logger LOGGER = Logger.getLogger(VendorDao.class);
 	
+	private static VendorDao vendorDao;
+	
+	private VendorDao(){
+			System.out.println("VendorDao");
+	}
+	
+	public static VendorDao getInstance() {
+		if(vendorDao==null) {
+			vendorDao=new VendorDao();
+		}
+		return vendorDao;
+	}
+	/**
+     * Searches for a existing Vendor Record in the Table.
+     * 
+     * Searching is done on the basis of Email Address & Password.
+     *
+ 	 * @param   vendor
+     *          A vendor object containing data.
+     *
+     * @return  boolean
+     * 		    true if matching record found otherwise else.
+     */
 	public boolean loginVendor(Vendor vendor) {
-		LOGGER.debug(" loginVendor execution started");
+		LOGGER.debug("loginVendor execution started");
 		boolean status = false;
 		Connection con = null;
 		Statement stmt = null;
@@ -46,17 +103,26 @@ public class VendorDao extends Dao{
 				status= false;
 			}
 		} catch(SQLException sqle) {
-			//sqle.printStackTrace();
 			LOGGER.error("Exception Occured.", sqle);
 		} finally {
 			closeResultSet(rs);
 			closeStatement(stmt);
 			closeConnection(con);
 		}
-		LOGGER.debug(" loginVendor execution ended");
+		LOGGER.debug("loginVendor execution ended");
 		return status;
 	}
 	
+	
+	/**
+     * Add product in the Table.
+     *
+ 	 * @param   product
+     *          A product object containing product data.
+     *
+     * @return  boolean
+     * 		    true if product successfully inserted.
+     */
 	public boolean addProduct(Product product) {
 		LOGGER.debug(" addProduct execution started");
 		boolean status = false;
@@ -90,16 +156,27 @@ public class VendorDao extends Dao{
 				status = false;
 			}
 	} catch(SQLException sqle) {
-		//sqle.printStackTrace();
 		LOGGER.error("Exception Occured.", sqle);
 	} finally {
 		closeResultSet(rs);
 		closeStatement(stmt);
 		closeConnection(con);
 		}
-		LOGGER.debug(" addProduct execution ended");
+		LOGGER.debug("addProduct execution ended");
 		return status;
 	}
+	
+	/**
+     * Add product description and specification in the Table.
+     *
+ 	 * @param   productId
+ 	 * 			int productId returned from the addProduct method.
+ 	 * 			product
+     *          A product object containing product data.
+     *
+     * @return  boolean
+     * 		    true if product successfully inserted.
+     */
 	
 	public boolean addDescriptionAndSpecs(int prodId,Product product) {
 		LOGGER.debug(" addDescriptionAndSpecs execution started");
@@ -237,7 +314,6 @@ public class VendorDao extends Dao{
 			}
 			
 		}catch(SQLException sqle) {
-			//sqle.printStackTrace();
 			LOGGER.error("Exception Occured.", sqle);
 		} finally {
 			closePreparedStatement(pStmt2);
@@ -245,11 +321,18 @@ public class VendorDao extends Dao{
 			closeResultSet(rs);
 			closeConnection(con);
 		}
-		LOGGER.debug(" addDescriptionAndSpecs execution ended");
+		LOGGER.debug("addDescriptionAndSpecs execution ended");
 		return status;
 		
 	}
 	
+	
+	/**
+     * Retrieves all the products on the basis of vendorId.
+     *
+     *@return   List
+     * 			List of all the products of vendor.
+     */
 	public List<Product> displayAllProducts(int id) {
 		LOGGER.debug(" displayAllProducts execution started");
 		ArrayList<Product> productList = new ArrayList<>();
@@ -387,7 +470,6 @@ public class VendorDao extends Dao{
 				productList.add(product);
 			}
 		} catch(SQLException sqle) {
-			//sqle.printStackTrace();
 			LOGGER.error("Exception Occured.", sqle);
 		} finally {
 			closeResultSet(rs);
@@ -398,8 +480,17 @@ public class VendorDao extends Dao{
 		return productList;
 	}
 	
+	/**
+	 * delete product from the product table on the basis of id
+	 * 
+	 * @param product
+	 * 			product object containing the product data including its id
+	 * @return	true
+	 * 				if product is deleted successfully from the products table else otherwise
+	 * 		
+	 */
 	public boolean deleteProduct(Product product) {
-		LOGGER.debug(" deleteProduct execution started");
+		LOGGER.debug("deleteProduct execution started");
 		boolean status = false;
 		Connection con = null;
 		PreparedStatement pStmt = null;
@@ -415,17 +506,30 @@ public class VendorDao extends Dao{
 			pStmt.executeUpdate();
 		
 		}catch(SQLException sqle) {
-			//sqle.printStackTrace();
 			LOGGER.error("Exception Occured.", sqle);
 		} finally {
 			closePreparedStatement(pStmt);
 			closeResultSet(rs);
 			closeConnection(con);
 		}
-		LOGGER.debug(" deleteProduct execution ended");
+		LOGGER.debug("deleteProduct execution ended");
 		return status;
 	}
 	
+	
+	/**
+     * Edit product information,description and specification in the Table.
+     *
+ 	 * @param   product
+     *          A product object containing product data.
+ 	 * 
+ 	 * 			productId
+ 	 * 			int productId having id of the product.
+ 	 * 			
+     *
+     * @return  boolean
+     * 		    true if product successfully edited.
+     */
 	public boolean editProduct(Product product,int id) {
 		LOGGER.debug(" editProduct execution started");
 		Connection con = null;
@@ -455,7 +559,6 @@ public class VendorDao extends Dao{
 			pStmt1.setString(10, product.getImage4());
 			pStmt1.setString(11, product.getImage5());
 			pStmt1.setInt(12, id);
-			//String sql = "UPDATE product_information SET product_name='"+product.getName()+"',product_price='"+product.getPrice()+"',product_quantity='"+product.getQuantity()+"',product_description='"+product.getDescription()+"',product_image1='"+product.getImage1()+"',product_image2='"+product.getImage2()+"',product_image3='"+product.getImage3()+"',product_image4='"+product.getImage4()+"',product_image5='"+product.getImage5()+"' WHERE product_id='"+id+"'";
 			
 			String sql2 = "UPDATE product_description SET descp_1_title=?,descp_1_content=?,descp_2_title=?,descp_2_content=?,descp_3_title=?,descp_3_content=?,"
 					+ "descp_4_title=?,descp_4_content=?,descp_5_title=?,descp_5_content=?,descp_6_title=?,descp_6_content=?,descp_7_title=?,descp_7_content=?,"
@@ -580,7 +683,6 @@ public class VendorDao extends Dao{
 				status = true;
 			}
 		} catch(SQLException sqle) {
-			//sqle.printStackTrace();
 			LOGGER.error("Exception Occured.", sqle);
 		} finally {
 			closeStatement(pStmt3);

@@ -20,6 +20,11 @@ import com.techaspect.entity.Product;
 import com.techaspect.entity.Vendor;
 
 public class VendorEditProduct extends HttpServlet {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Override
 	 public void service(HttpServletRequest request,HttpServletResponse  response) throws ServletException,IOException{
 		HttpSession session = request.getSession(); 
@@ -346,7 +351,7 @@ public class VendorEditProduct extends HttpServlet {
 		int productId = productList.get(listIndex).getId();
 		
 		
-		VendorDao vendorDao = new VendorDao();
+		VendorDao vendorDao =VendorDao.getInstance();
 		
 		 boolean status = vendorDao.editProduct(product,productId);
 		 if (status) {

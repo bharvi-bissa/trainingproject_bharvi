@@ -421,3 +421,479 @@ Caused by: java.net.ConnectException: Connection refused: connect
 2018-09-22 00:03:19 DEBUG ProductDao:168 -  getAllProducts execution ended
 2018-09-22 00:03:25 DEBUG ProductDao:24 -  getAllProducts execution started
 2018-09-22 00:03:25 DEBUG ProductDao:168 -  getAllProducts execution ended
+2018-09-23 19:25:26 DEBUG CustomerDao:69 - loginCustomer function started
+2018-09-23 19:25:28 ERROR CustomerDao:118 - Exception Occured.
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:989)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:341)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2189)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2222)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2017)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:779)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:389)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:330)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at org.apache.commons.dbcp2.DriverManagerConnectionFactory.createConnection(DriverManagerConnectionFactory.java:90)
+	at org.apache.commons.dbcp2.PoolableConnectionFactory.makeObject(PoolableConnectionFactory.java:291)
+	at org.apache.commons.pool2.impl.GenericObjectPool.create(GenericObjectPool.java:883)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:436)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:365)
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:134)
+	at com.techaspect.dao.CustomerDao.loginCustomer(CustomerDao.java:79)
+	at com.techaspect.LoginServlet.service(LoginServlet.java:51)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:837)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:583)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:548)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:226)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1180)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:511)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:185)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1112)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:134)
+	at org.eclipse.jetty.server.Server.handle(Server.java:523)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:320)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:251)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:273)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:95)
+	at org.eclipse.jetty.io.SelectChannelEndPoint$2.run(SelectChannelEndPoint.java:93)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.executeProduceConsume(ExecuteProduceConsume.java:303)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.produceConsume(ExecuteProduceConsume.java:148)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.run(ExecuteProduceConsume.java:136)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:671)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:589)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connect(Unknown Source)
+	at java.net.PlainSocketImpl.connect(Unknown Source)
+	at java.net.SocksSocketImpl.connect(Unknown Source)
+	at java.net.Socket.connect(Unknown Source)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:211)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:300)
+	... 46 more
+2018-09-23 19:25:28 DEBUG CustomerDao:126 - loginCustomer function ended
+2018-09-23 19:25:38 DEBUG CustomerDao:69 - loginCustomer function started
+2018-09-23 19:25:40 ERROR CustomerDao:118 - Exception Occured.
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:989)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:341)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2189)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2222)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2017)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:779)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:389)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:330)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at org.apache.commons.dbcp2.DriverManagerConnectionFactory.createConnection(DriverManagerConnectionFactory.java:90)
+	at org.apache.commons.dbcp2.PoolableConnectionFactory.makeObject(PoolableConnectionFactory.java:291)
+	at org.apache.commons.pool2.impl.GenericObjectPool.create(GenericObjectPool.java:883)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:436)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:365)
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:134)
+	at com.techaspect.dao.CustomerDao.loginCustomer(CustomerDao.java:79)
+	at com.techaspect.LoginServlet.service(LoginServlet.java:51)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:837)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:583)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:548)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:226)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1180)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:511)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:185)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1112)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:134)
+	at org.eclipse.jetty.server.Server.handle(Server.java:523)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:320)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:251)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:273)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:95)
+	at org.eclipse.jetty.io.SelectChannelEndPoint$2.run(SelectChannelEndPoint.java:93)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.executeProduceConsume(ExecuteProduceConsume.java:303)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.produceConsume(ExecuteProduceConsume.java:148)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.run(ExecuteProduceConsume.java:136)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:671)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:589)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.connect0(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connect(Unknown Source)
+	at java.net.PlainSocketImpl.connect(Unknown Source)
+	at java.net.SocksSocketImpl.connect(Unknown Source)
+	at java.net.Socket.connect(Unknown Source)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:211)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:300)
+	... 46 more
+2018-09-23 19:25:40 DEBUG CustomerDao:126 - loginCustomer function ended
+2018-09-23 19:26:37 DEBUG CustomerDao:69 - loginCustomer function started
+2018-09-23 19:26:37 DEBUG CustomerDao:126 - loginCustomer function ended
+2018-09-23 19:26:40 DEBUG ProductDao:24 -  getAllProducts execution started
+2018-09-23 19:26:40 DEBUG ProductDao:168 -  getAllProducts execution ended
+2018-09-23 19:26:52 DEBUG ProductDao:24 -  getAllProducts execution started
+2018-09-23 19:26:52 DEBUG ProductDao:168 -  getAllProducts execution ended
+2018-09-23 19:26:56 DEBUG ProductDao:24 -  getAllProducts execution started
+2018-09-23 19:26:56 DEBUG ProductDao:168 -  getAllProducts execution ended
+2018-09-23 19:27:10 DEBUG ProductDao:24 -  getAllProducts execution started
+2018-09-23 19:27:10 DEBUG ProductDao:168 -  getAllProducts execution ended
+2018-09-23 19:28:04 DEBUG ProductDao:24 -  getAllProducts execution started
+2018-09-23 19:28:04 DEBUG ProductDao:168 -  getAllProducts execution ended
+2018-09-23 19:28:24 DEBUG CustomerDao:169 -  updateAccount execution started
+2018-09-23 19:28:24 DEBUG CustomerDao:235 -  updateAccount execution ended
+2018-09-23 19:28:31 DEBUG CustomerDao:169 -  updateAccount execution started
+2018-09-23 19:28:31 DEBUG CustomerDao:235 -  updateAccount execution ended
+2018-09-23 19:28:45 DEBUG CustomerDao:169 -  updateAccount execution started
+2018-09-23 19:28:45 DEBUG CustomerDao:235 -  updateAccount execution ended
+2018-09-23 19:28:55 DEBUG CustomerDao:169 -  updateAccount execution started
+2018-09-23 19:28:55 DEBUG CustomerDao:235 -  updateAccount execution ended
+2018-09-23 20:31:07 DEBUG CustomerDao:69 - loginCustomer function started
+2018-09-23 20:31:07 DEBUG CustomerDao:126 - loginCustomer function ended
+2018-09-23 20:31:09 DEBUG ProductDao:24 -  getAllProducts execution started
+2018-09-23 20:31:09 DEBUG ProductDao:168 -  getAllProducts execution ended
+2018-09-23 20:31:15 DEBUG ProductDao:24 -  getAllProducts execution started
+2018-09-23 20:31:15 DEBUG ProductDao:168 -  getAllProducts execution ended
+2018-09-23 20:31:54 DEBUG ProductDao:24 -  getAllProducts execution started
+2018-09-23 20:31:54 DEBUG ProductDao:168 -  getAllProducts execution ended
+2018-09-23 20:31:58 DEBUG ProductDao:24 -  getAllProducts execution started
+2018-09-23 20:31:58 DEBUG ProductDao:168 -  getAllProducts execution ended
+2018-09-23 23:53:04 DEBUG CustomerDao:69 - loginCustomer function started
+2018-09-23 23:53:04 DEBUG CustomerDao:126 - loginCustomer function ended
+2018-09-23 23:53:06 DEBUG ProductDao:24 -  getAllProducts execution started
+2018-09-23 23:53:06 DEBUG ProductDao:168 -  getAllProducts execution ended
+2018-09-23 23:53:09 DEBUG ProductDao:24 -  getAllProducts execution started
+2018-09-23 23:53:09 DEBUG ProductDao:168 -  getAllProducts execution ended
+2018-09-23 23:53:15 DEBUG ProductDao:24 -  getAllProducts execution started
+2018-09-23 23:53:15 DEBUG ProductDao:168 -  getAllProducts execution ended
+2018-09-24 10:24:11 DEBUG CustomerDao:69 - loginCustomer function started
+2018-09-24 10:24:11 DEBUG CustomerDao:126 - loginCustomer function ended
+2018-09-24 10:24:14 DEBUG ProductDao:24 -  getAllProducts execution started
+2018-09-24 10:24:14 DEBUG ProductDao:168 -  getAllProducts execution ended
+2018-09-24 10:26:29 DEBUG ProductDao:24 -  getAllProducts execution started
+2018-09-24 10:26:29 DEBUG ProductDao:168 -  getAllProducts execution ended
+2018-09-24 10:27:54 DEBUG ProductDao:24 -  getAllProducts execution started
+2018-09-24 10:27:54 DEBUG ProductDao:168 -  getAllProducts execution ended
+2018-09-24 10:30:22 DEBUG ProductDao:24 -  getAllProducts execution started
+2018-09-24 10:30:22 DEBUG ProductDao:168 -  getAllProducts execution ended
+2018-09-24 12:16:18 DEBUG ProductDao:24 -  getAllProducts execution started
+2018-09-24 12:16:18 DEBUG ProductDao:168 -  getAllProducts execution ended
+2018-09-24 12:16:23 DEBUG CustomerDao:69 - loginCustomer function started
+2018-09-24 12:16:23 DEBUG CustomerDao:126 - loginCustomer function ended
+2018-09-24 12:16:31 DEBUG CustomerDao:169 -  updateAccount execution started
+2018-09-24 12:16:31 DEBUG CustomerDao:235 -  updateAccount execution ended
+2018-09-24 12:16:45 DEBUG CustomerDao:169 -  updateAccount execution started
+2018-09-24 12:16:45 DEBUG CustomerDao:235 -  updateAccount execution ended
+2018-09-24 12:16:49 DEBUG ProductDao:24 -  getAllProducts execution started
+2018-09-24 12:16:49 DEBUG ProductDao:168 -  getAllProducts execution ended
+2018-09-24 12:16:51 DEBUG ProductDao:24 -  getAllProducts execution started
+2018-09-24 12:16:51 DEBUG ProductDao:168 -  getAllProducts execution ended
+2018-09-24 12:16:57 DEBUG ProductDao:24 -  getAllProducts execution started
+2018-09-24 12:16:57 DEBUG ProductDao:168 -  getAllProducts execution ended
+2018-09-24 15:11:04 DEBUG CustomerDao:71 -  insertCustomer execution started
+2018-09-24 15:11:04 DEBUG CustomerDao:105 - insertCustomer execution ending
+2018-09-24 15:15:41 DEBUG CustomerDao:123 - loginCustomer function started
+2018-09-24 15:15:41 DEBUG CustomerDao:178 - loginCustomer function ended
+2018-09-24 15:16:14 DEBUG CustomerDao:249 - updateAccount execution started
+2018-09-24 15:16:14 DEBUG CustomerDao:309 - updateAccount execution ended
+2018-09-24 15:18:48 DEBUG CustomerDao:249 - updateAccount execution started
+2018-09-24 15:18:48 DEBUG CustomerDao:309 - updateAccount execution ended
+2018-09-24 15:19:12 DEBUG CustomerDao:123 - loginCustomer function started
+2018-09-24 15:19:12 DEBUG CustomerDao:178 - loginCustomer function ended
+2018-09-24 15:19:37 DEBUG ProductDao:63 - getAllProducts execution started
+2018-09-24 15:19:37 DEBUG ProductDao:207 - getAllProducts execution ended
+2018-09-24 15:21:02 DEBUG CustomerDao:249 - updateAccount execution started
+2018-09-24 15:21:02 DEBUG CustomerDao:309 - updateAccount execution ended
+2018-09-24 15:21:20 DEBUG CustomerDao:249 - updateAccount execution started
+2018-09-24 15:21:20 DEBUG CustomerDao:309 - updateAccount execution ended
+2018-09-24 15:21:35 DEBUG CustomerDao:249 - updateAccount execution started
+2018-09-24 15:21:35 DEBUG CustomerDao:309 - updateAccount execution ended
+2018-09-24 15:22:39 DEBUG CustomerDao:197 -  changePassword execution started
+2018-09-24 15:23:27 DEBUG CustomerDao:123 - loginCustomer function started
+2018-09-24 15:23:27 DEBUG CustomerDao:178 - loginCustomer function ended
+2018-09-24 15:23:46 DEBUG CustomerDao:197 -  changePassword execution started
+2018-09-24 15:23:46 DEBUG CustomerDao:227 -  changePassword execution ended
+2018-09-24 15:24:25 DEBUG CustomerDao:197 -  changePassword execution started
+2018-09-24 15:24:25 DEBUG CustomerDao:227 -  changePassword execution ended
+2018-09-24 15:24:37 DEBUG CustomerDao:197 -  changePassword execution started
+2018-09-24 15:24:37 DEBUG CustomerDao:227 -  changePassword execution ended
+2018-09-24 15:39:31 DEBUG CustomerDao:74 -  insertCustomer execution started
+2018-09-24 15:39:32 DEBUG CustomerDao:108 - insertCustomer execution ending
+2018-09-24 15:39:49 DEBUG CustomerDao:126 - loginCustomer function started
+2018-09-24 15:39:49 DEBUG CustomerDao:181 - loginCustomer function ended
+2018-09-24 15:40:06 DEBUG VendorDao:68 - loginVendor execution started
+2018-09-24 15:40:06 DEBUG VendorDao:100 - loginVendor execution ended
+2018-09-24 15:41:04 DEBUG VendorDao:115 -  addProduct execution started
+2018-09-24 15:41:04 DEBUG VendorDao:170 -  addDescriptionAndSpecs execution started
+2018-09-24 15:41:04 DEBUG VendorDao:153 - addProduct execution ended
+2018-09-24 15:41:04 DEBUG VendorDao:325 -  displayAllProducts execution started
+2018-09-24 15:41:04 DEBUG VendorDao:467 -  displayAllProducts execution ended
+2018-09-24 15:41:15 DEBUG ProductDao:63 - getAllProducts execution started
+2018-09-24 15:41:15 DEBUG ProductDao:207 - getAllProducts execution ended
+2018-09-24 15:41:45 DEBUG ProductDao:63 - getAllProducts execution started
+2018-09-24 15:41:45 DEBUG ProductDao:207 - getAllProducts execution ended
+2018-09-24 15:41:58 DEBUG ProductDao:63 - getAllProducts execution started
+2018-09-24 15:41:58 DEBUG ProductDao:207 - getAllProducts execution ended
+2018-09-24 15:42:38 DEBUG ProductDao:63 - getAllProducts execution started
+2018-09-24 15:42:38 DEBUG ProductDao:207 - getAllProducts execution ended
+2018-09-24 15:42:41 DEBUG ProductDao:63 - getAllProducts execution started
+2018-09-24 15:42:41 DEBUG ProductDao:207 - getAllProducts execution ended
+2018-09-24 15:43:05 DEBUG CustomerDao:126 - loginCustomer function started
+2018-09-24 15:43:05 DEBUG CustomerDao:181 - loginCustomer function ended
+2018-09-24 16:13:32 DEBUG CustomerDao:136 - loginCustomer function started
+2018-09-24 16:13:32 DEBUG CustomerDao:191 - loginCustomer function ended
+2018-09-24 16:13:50 DEBUG CustomerDao:262 - updateAccount execution started
+2018-09-24 16:13:50 DEBUG CustomerDao:322 - updateAccount execution ended
+2018-09-24 16:13:54 DEBUG ProductDao:75 - getAllProducts execution started
+2018-09-24 16:13:54 DEBUG ProductDao:219 - getAllProducts execution ended
+2018-09-24 16:14:50 DEBUG ProductDao:75 - getAllProducts execution started
+2018-09-24 16:14:50 DEBUG ProductDao:219 - getAllProducts execution ended
+2018-09-24 16:15:11 DEBUG ProductDao:75 - getAllProducts execution started
+2018-09-24 16:15:11 DEBUG ProductDao:219 - getAllProducts execution ended
+2018-09-24 16:15:17 DEBUG ProductDao:75 - getAllProducts execution started
+2018-09-24 16:15:17 DEBUG ProductDao:219 - getAllProducts execution ended
+2018-09-24 16:15:19 DEBUG ProductDao:75 - getAllProducts execution started
+2018-09-24 16:15:19 DEBUG ProductDao:219 - getAllProducts execution ended
+2018-09-24 16:15:24 DEBUG ProductDao:75 - getAllProducts execution started
+2018-09-24 16:15:24 DEBUG ProductDao:219 - getAllProducts execution ended
+2018-09-24 16:15:26 DEBUG ProductDao:75 - getAllProducts execution started
+2018-09-24 16:15:26 DEBUG ProductDao:219 - getAllProducts execution ended
+2018-09-24 16:16:28 DEBUG VendorDao:80 - loginVendor execution started
+2018-09-24 16:16:28 DEBUG VendorDao:112 - loginVendor execution ended
+2018-09-24 16:16:33 DEBUG VendorDao:337 -  displayAllProducts execution started
+2018-09-24 16:16:33 DEBUG VendorDao:479 -  displayAllProducts execution ended
+2018-09-24 16:17:00 DEBUG VendorDao:534 -  editProduct execution started
+2018-09-24 16:17:00 DEBUG VendorDao:693 -  editProduct execution ended
+2018-09-24 16:17:00 DEBUG VendorDao:337 -  displayAllProducts execution started
+2018-09-24 16:17:00 DEBUG VendorDao:479 -  displayAllProducts execution ended
+2018-09-24 16:17:22 DEBUG ProductDao:75 - getAllProducts execution started
+2018-09-24 16:17:22 DEBUG ProductDao:219 - getAllProducts execution ended
+2018-09-24 16:17:48 DEBUG ProductDao:75 - getAllProducts execution started
+2018-09-24 16:17:48 DEBUG ProductDao:219 - getAllProducts execution ended
+2018-09-24 16:18:05 DEBUG VendorDao:493 - deleteProduct execution started
+2018-09-24 16:18:05 DEBUG VendorDao:515 - deleteProduct execution ended
+2018-09-24 16:18:05 DEBUG VendorDao:337 -  displayAllProducts execution started
+2018-09-24 16:18:05 DEBUG VendorDao:479 -  displayAllProducts execution ended
+2018-09-24 16:18:59 DEBUG ProductDao:75 - getAllProducts execution started
+2018-09-24 16:18:59 DEBUG ProductDao:219 - getAllProducts execution ended
+2018-09-24 16:19:14 DEBUG VendorDao:127 -  addProduct execution started
+2018-09-24 16:19:14 DEBUG VendorDao:182 -  addDescriptionAndSpecs execution started
+2018-09-24 16:19:14 DEBUG VendorDao:165 - addProduct execution ended
+2018-09-24 16:19:14 DEBUG VendorDao:337 -  displayAllProducts execution started
+2018-09-24 16:19:14 DEBUG VendorDao:479 -  displayAllProducts execution ended
+2018-09-24 16:19:16 DEBUG ProductDao:75 - getAllProducts execution started
+2018-09-24 16:19:16 DEBUG ProductDao:219 - getAllProducts execution ended
+2018-09-24 16:41:09 DEBUG ProductDao:78 - getAllProducts execution started
+2018-09-24 16:41:09 DEBUG ProductDao:222 - getAllProducts execution ended
+2018-09-24 16:41:21 DEBUG CustomerDao:139 - loginCustomer function started
+2018-09-24 16:41:21 DEBUG CustomerDao:194 - loginCustomer function ended
+2018-09-24 16:42:06 DEBUG ProductDao:78 - getAllProducts execution started
+2018-09-24 16:42:06 DEBUG ProductDao:222 - getAllProducts execution ended
+2018-09-24 16:42:16 DEBUG ProductDao:78 - getAllProducts execution started
+2018-09-24 16:42:16 DEBUG ProductDao:222 - getAllProducts execution ended
+2018-09-24 16:42:28 DEBUG ProductDao:78 - getAllProducts execution started
+2018-09-24 16:42:28 DEBUG ProductDao:222 - getAllProducts execution ended
+2018-09-24 17:02:04 DEBUG CustomerDao:87 -  insertCustomer execution started
+2018-09-24 17:02:04 DEBUG CustomerDao:121 - insertCustomer execution ending
+2018-09-24 17:13:27 DEBUG CustomerDao:139 - loginCustomer function started
+2018-09-24 17:13:27 DEBUG CustomerDao:194 - loginCustomer function ended
+2018-09-24 17:13:39 DEBUG CustomerDao:265 - updateAccount execution started
+2018-09-24 17:13:39 DEBUG CustomerDao:325 - updateAccount execution ended
+2018-09-24 17:14:35 DEBUG ProductDao:78 - getAllProducts execution started
+2018-09-24 17:14:35 DEBUG ProductDao:222 - getAllProducts execution ended
+2018-09-24 17:15:17 DEBUG ProductDao:78 - getAllProducts execution started
+2018-09-24 17:15:17 DEBUG ProductDao:222 - getAllProducts execution ended
+2018-09-24 17:28:47 DEBUG CustomerDao:139 - loginCustomer function started
+2018-09-24 17:28:47 DEBUG CustomerDao:194 - loginCustomer function ended
+2018-09-24 17:29:12 DEBUG ProductDao:78 - getAllProducts execution started
+2018-09-24 17:29:12 DEBUG ProductDao:222 - getAllProducts execution ended
+2018-09-24 17:31:07 DEBUG VendorDao:80 - loginVendor execution started
+2018-09-24 17:31:07 DEBUG VendorDao:112 - loginVendor execution ended
+2018-09-24 17:33:51 DEBUG VendorDao:337 -  displayAllProducts execution started
+2018-09-24 17:33:51 DEBUG VendorDao:479 -  displayAllProducts execution ended
+2018-09-24 17:44:20 DEBUG CustomerDao:139 - loginCustomer function started
+2018-09-24 17:44:20 DEBUG CustomerDao:194 - loginCustomer function ended
+2018-09-24 17:44:21 DEBUG ProductDao:78 - getAllProducts execution started
+2018-09-24 17:44:21 DEBUG ProductDao:222 - getAllProducts execution ended
+2018-09-24 17:44:24 DEBUG ProductDao:78 - getAllProducts execution started
+2018-09-24 17:44:24 DEBUG ProductDao:222 - getAllProducts execution ended
+2018-09-24 17:48:08 DEBUG VendorDao:534 -  editProduct execution started
+2018-09-24 17:48:08 DEBUG VendorDao:693 -  editProduct execution ended
+2018-09-24 17:48:08 DEBUG VendorDao:337 -  displayAllProducts execution started
+2018-09-24 17:48:08 DEBUG VendorDao:479 -  displayAllProducts execution ended
+2018-09-24 17:48:18 DEBUG CustomerDao:139 - loginCustomer function started
+2018-09-24 17:48:18 DEBUG CustomerDao:194 - loginCustomer function ended
+2018-09-24 17:48:20 DEBUG ProductDao:78 - getAllProducts execution started
+2018-09-24 17:48:20 DEBUG ProductDao:222 - getAllProducts execution ended
+2018-09-24 18:18:03 DEBUG CustomerDao:139 - loginCustomer function started
+2018-09-24 18:18:03 DEBUG CustomerDao:194 - loginCustomer function ended
+2018-09-24 18:18:04 DEBUG ProductDao:78 - getAllProducts execution started
+2018-09-24 18:18:04 DEBUG ProductDao:222 - getAllProducts execution ended
+2018-09-24 18:18:06 DEBUG ProductDao:78 - getAllProducts execution started
+2018-09-24 18:18:06 DEBUG ProductDao:222 - getAllProducts execution ended
+2018-09-24 18:20:57 DEBUG CustomerDao:139 - loginCustomer function started
+2018-09-24 18:20:57 DEBUG CustomerDao:194 - loginCustomer function ended
+2018-09-24 18:21:03 DEBUG ProductDao:78 - getAllProducts execution started
+2018-09-24 18:21:03 DEBUG ProductDao:222 - getAllProducts execution ended
+2018-09-24 18:21:35 DEBUG ProductDao:78 - getAllProducts execution started
+2018-09-24 18:21:35 DEBUG ProductDao:222 - getAllProducts execution ended
+2018-09-24 18:22:01 DEBUG ProductDao:78 - getAllProducts execution started
+2018-09-24 18:22:01 DEBUG ProductDao:222 - getAllProducts execution ended
+2018-09-24 18:22:05 DEBUG ProductDao:78 - getAllProducts execution started
+2018-09-24 18:22:05 DEBUG ProductDao:222 - getAllProducts execution ended
+2018-09-24 18:22:32 DEBUG ProductDao:78 - getAllProducts execution started
+2018-09-24 18:22:32 DEBUG ProductDao:222 - getAllProducts execution ended
+2018-09-24 18:22:35 DEBUG ProductDao:78 - getAllProducts execution started
+2018-09-24 18:22:35 DEBUG ProductDao:222 - getAllProducts execution ended
+2018-09-24 18:22:38 DEBUG ProductDao:78 - getAllProducts execution started
+2018-09-24 18:22:38 DEBUG ProductDao:222 - getAllProducts execution ended
+2018-09-24 18:23:21 DEBUG VendorDao:80 - loginVendor execution started
+2018-09-24 18:23:21 DEBUG VendorDao:112 - loginVendor execution ended
+2018-09-24 18:24:06 DEBUG VendorDao:127 -  addProduct execution started
+2018-09-24 18:24:06 DEBUG VendorDao:182 -  addDescriptionAndSpecs execution started
+2018-09-24 18:24:06 DEBUG VendorDao:165 - addProduct execution ended
+2018-09-24 18:24:06 DEBUG VendorDao:337 -  displayAllProducts execution started
+2018-09-24 18:24:06 DEBUG VendorDao:479 -  displayAllProducts execution ended
+2018-09-24 18:24:29 DEBUG ProductDao:78 - getAllProducts execution started
+2018-09-24 18:24:29 DEBUG ProductDao:222 - getAllProducts execution ended
+2018-09-24 18:24:53 DEBUG ProductDao:78 - getAllProducts execution started
+2018-09-24 18:24:53 DEBUG ProductDao:222 - getAllProducts execution ended
+2018-09-24 18:25:17 DEBUG VendorDao:534 -  editProduct execution started
+2018-09-24 18:25:17 DEBUG VendorDao:693 -  editProduct execution ended
+2018-09-24 18:25:17 DEBUG VendorDao:337 -  displayAllProducts execution started
+2018-09-24 18:25:17 DEBUG VendorDao:479 -  displayAllProducts execution ended
+2018-09-24 18:26:52 DEBUG VendorDao:534 -  editProduct execution started
+2018-09-24 18:26:52 DEBUG VendorDao:693 -  editProduct execution ended
+2018-09-24 18:26:52 DEBUG VendorDao:337 -  displayAllProducts execution started
+2018-09-24 18:26:52 DEBUG VendorDao:479 -  displayAllProducts execution ended
+2018-09-24 18:26:58 DEBUG ProductDao:78 - getAllProducts execution started
+2018-09-24 18:26:58 DEBUG ProductDao:222 - getAllProducts execution ended
+2018-09-24 18:27:13 DEBUG VendorDao:493 - deleteProduct execution started
+2018-09-24 18:27:13 DEBUG VendorDao:515 - deleteProduct execution ended
+2018-09-24 18:27:13 DEBUG VendorDao:337 -  displayAllProducts execution started
+2018-09-24 18:27:13 DEBUG VendorDao:479 -  displayAllProducts execution ended
+2018-09-24 18:27:20 DEBUG ProductDao:78 - getAllProducts execution started
+2018-09-24 18:27:20 DEBUG ProductDao:222 - getAllProducts execution ended
+2018-09-24 18:29:15 DEBUG CustomerDao:139 - loginCustomer function started
+2018-09-24 18:29:15 DEBUG CustomerDao:194 - loginCustomer function ended
+2018-09-24 18:36:33 DEBUG CustomerDao:139 - loginCustomer function started
+2018-09-24 18:36:33 ERROR CustomerDao:186 - Exception Occured.
+com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Access denied for user ''@'localhost' to database 'ecommercedb'
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.Util.getInstance(Util.java:408)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:943)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3973)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3909)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:873)
+	at com.mysql.jdbc.MysqlIO.proceedHandshakeWithPluggableAuthentication(MysqlIO.java:1710)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1226)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2191)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2222)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2017)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:779)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+	at java.lang.reflect.Constructor.newInstance(Unknown Source)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:389)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:330)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at org.apache.commons.dbcp2.DriverManagerConnectionFactory.createConnection(DriverManagerConnectionFactory.java:90)
+	at org.apache.commons.dbcp2.PoolableConnectionFactory.makeObject(PoolableConnectionFactory.java:291)
+	at org.apache.commons.pool2.impl.GenericObjectPool.create(GenericObjectPool.java:883)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:436)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:365)
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:134)
+	at com.techaspect.dao.CustomerDao.loginCustomer(CustomerDao.java:149)
+	at com.techaspect.LoginServlet.service(LoginServlet.java:51)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:837)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:583)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143)
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:548)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:226)
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1180)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:511)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:185)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1112)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:134)
+	at org.eclipse.jetty.server.Server.handle(Server.java:523)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:320)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:251)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:273)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:95)
+	at org.eclipse.jetty.io.SelectChannelEndPoint$2.run(SelectChannelEndPoint.java:93)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.executeProduceConsume(ExecuteProduceConsume.java:303)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.produceConsume(ExecuteProduceConsume.java:148)
+	at org.eclipse.jetty.util.thread.strategy.ExecuteProduceConsume.run(ExecuteProduceConsume.java:136)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:671)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:589)
+	at java.lang.Thread.run(Unknown Source)
+2018-09-24 18:36:33 DEBUG CustomerDao:194 - loginCustomer function ended
+2018-09-24 21:30:50 DEBUG CustomerDao:139 - loginCustomer function started
+2018-09-24 21:30:50 DEBUG CustomerDao:194 - loginCustomer function ended
+2018-09-24 21:33:42 DEBUG CustomerDao:139 - loginCustomer function started
+2018-09-24 21:33:43 DEBUG CustomerDao:194 - loginCustomer function ended
+2018-09-24 21:33:51 DEBUG ProductDao:78 - getAllProducts execution started
+2018-09-24 21:33:51 DEBUG ProductDao:222 - getAllProducts execution ended
+2018-09-24 21:33:59 DEBUG ProductDao:78 - getAllProducts execution started
+2018-09-24 21:33:59 DEBUG ProductDao:222 - getAllProducts execution ended
+2018-09-24 21:34:16 DEBUG ProductDao:78 - getAllProducts execution started
+2018-09-24 21:34:16 DEBUG ProductDao:222 - getAllProducts execution ended
+2018-09-24 21:35:19 DEBUG ProductDao:78 - getAllProducts execution started
+2018-09-24 21:35:19 DEBUG ProductDao:222 - getAllProducts execution ended
+2018-09-24 21:35:46 DEBUG ProductDao:78 - getAllProducts execution started
+2018-09-24 21:35:46 DEBUG ProductDao:222 - getAllProducts execution ended
+2018-09-24 21:41:06 DEBUG CustomerDao:139 - loginCustomer function started
+2018-09-24 21:41:06 DEBUG CustomerDao:194 - loginCustomer function ended
+2018-09-24 21:41:10 DEBUG ProductDao:78 - getAllProducts execution started
+2018-09-24 21:41:10 DEBUG ProductDao:222 - getAllProducts execution ended
+2018-09-24 21:41:35 DEBUG ProductDao:78 - getAllProducts execution started
+2018-09-24 21:41:35 DEBUG ProductDao:222 - getAllProducts execution ended
+2018-09-24 21:41:39 DEBUG ProductDao:78 - getAllProducts execution started
+2018-09-24 21:41:39 DEBUG ProductDao:222 - getAllProducts execution ended
+2018-09-24 21:41:42 DEBUG ProductDao:78 - getAllProducts execution started
+2018-09-24 21:41:42 DEBUG ProductDao:222 - getAllProducts execution ended

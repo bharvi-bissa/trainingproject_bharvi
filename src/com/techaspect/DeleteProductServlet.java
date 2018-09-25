@@ -28,7 +28,7 @@ public class DeleteProductServlet extends HttpServlet implements Serializable {
 		response.setContentType("text/html");
 		HttpSession session = request.getSession();
 		String id = request.getParameter("id");
-		VendorDao vendorDao = new VendorDao();
+		VendorDao vendorDao = VendorDao.getInstance();
 		
 		String index = request.getParameter("index");
 		

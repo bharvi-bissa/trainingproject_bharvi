@@ -30,11 +30,19 @@ public class Dao {
 		} catch (IOException ioe) {
 			ioe.printStackTrace();
 		}
-		
+		/*First, we'll create a ConnectionFactory that 
+		 * the pool will use to create Connections.
+		 */
 		DriverManagerConnectionFactory connectionFactory = new DriverManagerConnectionFactory(properties.getProperty("jdbc.url"), properties.getProperty("jdbc.username"), properties.getProperty("jdbc.password"));
+		/*Next we'll create the PoolableConnectionFactory, which wraps 
+		 * the "real" Connections created by the ConnectionFactory with the classes that implement the pooling functionality.
+		 */
 		PoolableConnectionFactory poolableConnectionFactory = new PoolableConnectionFactory(connectionFactory, null);
+		//Now we'll need a ObjectPool that serves as the actual pool of connections.
 		GenericObjectPool<PoolableConnection> connectionPool = new GenericObjectPool<>(poolableConnectionFactory);
+		//Set the factory's pool property to the owning pool
 		connectionPool.setMaxTotal(5);
+		//Finally, we create the DataSource passing in the object pool we created.
 		poolableConnectionFactory.setPool(connectionPool);
 		
 		PoolingDataSource<PoolableConnection> poolingDataSource = new PoolingDataSource<>(connectionPool);

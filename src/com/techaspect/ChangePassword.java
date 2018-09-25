@@ -38,7 +38,7 @@ public class ChangePassword extends HttpServlet implements Serializable {
 			 oldPassword = request.getParameter("old_password");
 			 newPassword = request.getParameter("new_password");
 			 
-			 CustomerDao customerDao = new CustomerDao();
+			 CustomerDao customerDao =CustomerDao.getInstance();
 			 
 			 boolean status = customerDao.changePassword(customer, newPassword, oldPassword);
 			if(status) {

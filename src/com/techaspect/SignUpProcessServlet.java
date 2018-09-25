@@ -12,7 +12,7 @@ import javax.servlet.http.HttpSession;
 import com.techaspect.dao.CustomerDao;
 import com.techaspect.entity.Customer;
 
-
+import com.techaspect.service.EmailService;
 
 public class SignUpProcessServlet extends HttpServlet {
 	
@@ -47,17 +47,18 @@ public class SignUpProcessServlet extends HttpServlet {
 		}
 		
 		Customer customer = new Customer();
-		
+		EmailService es = new EmailService();
 		customer.setFirstName(fname);
 		customer.setLastName(name);
 		customer.setEmail(email);
 		customer.setPassword(password);
 		
-		CustomerDao customerDao = new CustomerDao();
+		CustomerDao customerDao = CustomerDao.getInstance();
 		
 		boolean status = customerDao.insertCustomer(customer);
 		if(status) {
 			session.setAttribute("success","You are registered");
+			es.sendWelcomeMailToCustomer(customer);
 			response.sendRedirect(redirect);
 		} else {
 			String error = "Email already exists !";

@@ -15,7 +15,7 @@
 			response.sendRedirect("index.jsp");
 		}
 	
-		ProductDao productDao = new ProductDao();
+		ProductDao productDao = ProductDao.getInstance();
 		
 		List<Product> productsList = productDao.getAllProducts();
 		
@@ -258,7 +258,7 @@
             <div class="card">
                <div id="headingFour" role="tab" class="card-header">
                   <h5 class="mb-0">
-                     <a data-toggle="collapse" href="http://172.16.0.114:8080/trainingproject/Mobiles.html#collapseFour" aria-expanded="true" aria-controls="collapseFour">Brand</a>
+                     <a data-toggle="collapse" href="#collapseFour" aria-expanded="true" aria-controls="collapseFour">Brand</a>
                   </h5>
                </div>
                <div id="collapseFour" role="tabpanel" aria-labelledby="headingFour" data-parent="#accordionTwo" class="collapse show">
@@ -299,7 +299,7 @@
             <div class="card">
                <div id="headingFive" role="tab" class="card-header">
                   <h5 class="mb-0">
-                     <a data-toggle="collapse" href="http://172.16.0.114:8080/trainingproject/Mobiles.html#collapseFive" aria-expanded="false" aria-controls="collapseFive" class="collapsed">Price</a>
+                     <a data-toggle="collapse" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive" class="collapsed">Price</a>
                   </h5>
                </div>
                <div id="collapseFive" role="tabpanel" aria-labelledby="headingFive" data-parent="#accordionTwo" class="collapse">
@@ -392,7 +392,7 @@
                         <div class="text">
                            <h3 class="h52"><%= product.getName() %></h3>
                            <p class="price">&#x20B9;<%= product.getPrice() %></p>
-                           <div> <a href="addtocart?pid=<%= product.getId() %>&jsp=Mobile" class="btn btn-primary" style="background-color: #4fbfa8;color:#fff;border:none;"><i class="fas fa-cart-arrow-down"></i>&nbsp;Add To Cart</a> <a href="ProductDescription.jsp?id=<%= product.getId() %>" class="btn btn-primary" style="background-color: #4fbfa8;color:#fff;border:none;"><i class="fas fa-eye"></i>&nbsp;More Info</a></div>
+                           <div> <a href="addtocart?pid=<%= product.getId() %>&jsp=Mobile" class="btn btn-primary" style="background-color: #4fbfa8;color:#fff;border:none;border-radius: 0px;"><i class="fas fa-cart-arrow-down"></i>&nbsp;Add To Cart</a> <a href="ProductDescription.jsp?id=<%= product.getId() %>" class="btn btn-primary" style="background-color: #4fbfa8;color:#fff;border:none;border-radius: 0px;">More Info</a></div>
                         </div>
                      </a>
                   </div>

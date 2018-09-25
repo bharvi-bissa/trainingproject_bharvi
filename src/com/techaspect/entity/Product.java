@@ -1,182 +1,423 @@
+/*
+ * Copyright (c) 2018, TechAspect Solutions Private Limited. All Rights Reserved.
+ * TECHASPECT SOLUTIONS PRIVATE LIMITED PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ */
+
 package com.techaspect.entity;
 
 import java.io.Serializable;
 
+/**
+ * The Customer class represents a Customer Record.
+ * It includes properties for storing data and methods for
+ * retrieving & setting values in the properties.
+ * 
+ * @author  Bharvi Bissa
+ */
 public class Product implements Serializable {
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	/** The value is used for int storage representing Products ID. */
 	private int id;
+	/** The value is used for string storage representing Products name. */
 	private String name;
+	/** The value is used for int storage representing vendor id. */
 	private int vendorId;
+	/** The value is used for string storage representing Products price. */
 	private String price;
+	/** The value is used for string storage representing Products quantity. */
 	private String quantity;
+	/** The value is used for string storage representing Products description. */
 	private String description;
+	/** The value is used for string storage representing Products category. */
 	private String category;
+	/** The value is used for string storage representing Products subcategory. */
 	private String subcategory;
+	/** The value is used for string storage representing Products image1. */
 	private String image1;
+	/** The value is used for string storage representing Products image2. */
 	private String image2;
+	/** The value is used for string storage representing Products image3. */
 	private String image3;
+	/** The value is used for string storage representing Products image4. */
 	private String image4;
+	/** The value is used for string storage representing Products image5. */
 	private String image5;
+	/** The value is used for int storage representing Products descriptionId. */
 	private int descriptionId;
+	/** The value is used for string storage representing Products description1. */
 	private String prodouctDescription1;
+	/** The value is used for string storage representing Products description2. */
 	private String prodouctDescription2;
+	/** The value is used for string storage representing Products description3. */
 	private String prodouctDescription3;
+	/** The value is used for string storage representing Products description4. */
 	private String prodouctDescription4;
+	/** The value is used for string storage representing Products description5. */
 	private String prodouctDescription5;
+	/** The value is used for string storage representing Products description6. */
 	private String prodouctDescription6;
+	/** The value is used for string storage representing Products description7. */
 	private String prodouctDescription7;
+	/** The value is used for string storage representing Products description8. */
 	private String prodouctDescription8;
+	/** The value is used for string storage representing Products description9. */
 	private String prodouctDescription9;
+	/** The value is used for string storage representing Products description10. */
 	private String prodouctDescription10;
+	/** The value is used for string storage representing Products description title 1 . */
 	private String productDescriptionTitle1;
+	/** The value is used for string storage representing Products description title 2 . */
 	private String productDescriptionTitle2;
+	/** The value is used for string storage representing Products description title 3 . */
 	private String productDescriptionTitle3;
+	/** The value is used for string storage representing Products description title 4 . */
 	private String productDescriptionTitle4;
+	/** The value is used for string storage representing Products description title 5 . */
 	private String productDescriptionTitle5;
+	/** The value is used for string storage representing Products description title 6 . */
 	private String productDescriptionTitle6;
+	/** The value is used for string storage representing Products description title 7 . */
 	private String productDescriptionTitle7;
+	/** The value is used for string storage representing Products description title 8 . */
 	private String productDescriptionTitle8;
+	/** The value is used for string storage representing Products description title 9 . */
 	private String productDescriptionTitle9;
+	/** The value is used for string storage representing Products description title 10 . */
 	private String productDescriptionTitle10;
+	/** The value is used for int storage representing Products specificationId . */
 	private int specId;
+	/** The value is used for String storage representing Products specification box. */
 	private String box ;
+	/** The value is used for String storage representing Products specification model number . */
 	private String modelNumber ;
+	/** The value is used for String storage representing Products specification model name . */
 	private String modelName ;
+	/** The value is used for String storage representing Products specification model color . */
 	private String modelColor ;
+	/** The value is used for String storage representing Products specification browser type . */
 	private String browseType ;
+	/** The value is used for String storage representing Products specification sim type . */
 	private String simType ;
 	
+	/** The value is used for String storage representing Products specification touch screen . */
 	private String touchScreen ;
+	/** The value is used for String storage representing Products specification display size . */
 	private String displaySize;
+	/** The value is used for String storage representing Products specification resolution . */
 	private String resolution;
+	/** The value is used for String storage representing Products specification resolution type . */
 	private String resoType;
+	/** The value is used for String storage representing Products specification display type . */
 	private String displayType;
+	/** The value is used for String storage representing Products specification display colors . */
 	private String displayColors;
-	
+	/** The value is used for String storage representing Products specification operating System . */
 	private String os;
+	/** The value is used for String storage representing Products specification processor type . */
 	private String processorType;
+	/** The value is used for String storage representing Products specification processor core type . */
 	private String processorCore ;
+	/** The value is used for String storage representing Products specification primary clock speed . */
 	private String pClockspeed ;
+	/** The value is used for String storage representing Products specification secondary clock speed . */
 	private String sClockspeed ;
+	/** The value is used for String storage representing Products specification operating frequency . */
 	private String opFreq ;
 	
+	/** The value is used for String storage representing Products specification internal storage . */
 	private String internalStorage ;
+	/** The value is used for String storage representing Products specification RAM . */
 	private String ram ;
+	/** The value is used for String storage representing Products specification expandable storage . */
 	private String expStorage ;
+	/** The value is used for String storage representing Products specification supported memory card type. */
 	private String suppMemCardType ;
+	/** The value is used for String storage representing Products specification call log memory. */
 	private String callLogMemory ;
 	
+	/** The value is used for String storage representing Products specification primary camera available . */
 	private String pCameraAvailable;
+	/** The value is used for String storage representing Products specification primary camera . */
 	private String pCamera;
+	/** The value is used for String storage representing Products specification primary camera features . */
 	private String pCameraFeatures ;
+	/** The value is used for String storage representing Products specification secondary camera available . */
 	private String sCameraAvail ;
+	/** The value is used for String storage representing Products specification secondary camera . */
 	private String sCamera ;
+	/** The value is used for String storage representing Products specification secondary camera features . */
 	private String sCameraFeatures ;
+	/** The value is used for String storage representing Products specification flash . */
 	private String flash ;
+	/** The value is used for String storage representing Products specification hdrecording . */
 	private String hdRecording ;
+	/** The value is used for String storage representing Products specification full hd recording . */
 	private String fhdRecording ;
+	/** The value is used for String storage representing Products specification video recording . */
 	private String vRecording ;
+	/** The value is used for String storage representing Products specification video recording resolution. */
 	private String vrResolution ;
+	/** The value is used for String storage representing Products specification frame rate . */
 	private String frameRate ;
 	
+	/** The value is used for String storage representing Products specification phone book . */
 	private String phoneBook ;
+	/** The value is used for String storage representing Products specification network type . */
 	private String networkType ;
+	/** The value is used for String storage representing Products specification supported networks . */
 	private String suppNetworks ;
+	/** The value is used for String storage representing Products specification 3G . */
 	private String threeG;
+	/** The value is used for String storage representing Products specification GPRS . */
 	private String gprs;
+	/** The value is used for String storage representing Products specification pre installed browser . */
 	private String preInstalledBrowser;
 	
+	/** The value is used for String storage representing Products specification bluetooth support . */
 	private String bluetoothSupp;
+	/** The value is used for String storage representing Products specification bluetooth version . */
 	private String bluetoothVer ;
+	/** The value is used for String storage representing Products specification wifi . */
 	private String wifi ;
+	/** The value is used for String storage representing Products specification internet connectivity . */
 	private String iConn ;
+	/** The value is used for String storage representing Products specification wifi version. */
 	private String wifiVer ;
+	/** The value is used for String storage representing Products specification NFC . */
 	private String nfc ;
+	/** The value is used for String storage representing Products specification USB connectivity. */
 	private String usbConn;
+	/** The value is used for String storage representing Products specification audio jack . */
 	private String audioJack ;
+	/** The value is used for String storage representing Products specification smart phone . */
 	private String smartPhone;
+	/** The value is used for String storage representing Products specification sim size . */
 	private String simSize ;
+	/** The value is used for String storage representing Products specification removable battery . */
 	private String remoBattery ;
+	/** The value is used for String storage representing Products specification sms . */
 	private String sms ;
+	/** The value is used for String storage representing Products specification sensors . */
 	private String sensors ;
+	/** The value is used for String storage representing Products specification other features . */
 	private String otherFeatures;
+	/** The value is used for String storage representing Products specification important apps . */
 	private String impApps;
+	/** The value is used for String storage representing Products specification audio formats . */
 	private String audioFormats;
+	/** The value is used for String storage representing Products specification video formats . */
 	private String videoFormats ;
+	/** The value is used for String storage representing Products specification battery capacity . */
 	private String battCapacity ;
+	/** The value is used for String storage representing Products specification battery type . */
 	private String battType ;
+	/** The value is used for String storage representing Products specification width . */
 	private String width  ;
+	/** The value is used for String storage representing Products specification height . */
 	private String height ;
+	/** The value is used for String storage representing Products specification depth . */
 	private String depth; 
+	/** The value is used for String storage representing Products specification weight . */
 	private String weight ;
+	/** The value is used for String storage representing Products specification warranty summary . */
 	private String warrantySum ;
 	
+	/**
+     * Retrieves the value of the property id.
+     *
+     * @return     A code int value.
+     *             The ID of Product.
+     */
 	public int getId() {
 		return id;
 	}
+	/**
+     * Sets a value to the property id.
+     *
+     * @param      A int value.
+     *              The ID of Product.
+     */
 	public void setId(int id) {
 		this.id = id;
 	}
+	/**
+	* Sets a value to the property name.
+    *
+    * @param      A string value.
+    *             The Password of Product.
+    */
 	public String getName() {
 		return name;
 	}
+	
+	/**
+	* Sets a value to the property name.
+    *
+    * @param      A string value.
+    *             The Password of Product.
+    */
 	public void setName(String name) {
 		this.name = name;
 	}
+	/**
+	* Sets a value to the property price.
+    *
+    * @param      A string value.
+    *             The price of Product.
+    */
 	public String getPrice() {
 		return price;
 	}
+	/**
+	* Sets a value to the property price.
+    *
+    * @param      A string value.
+    *             The price of Product.
+    */
 	public void setPrice(String price) {
 		this.price = price;
 	}
+	/**
+	* retrieves a value to the property vendor id.
+    *
+    * @return      An int value.
+    *             The vendorId of Product.
+    */
 	public int getVendorId() {
 		return vendorId;
 	}
+	/**
+	* Sets a value to the property vendor id.
+    *
+    * @param      An int value.
+    *             The vendorId of Product.
+    */
 	public void setVendorId(int vendorId) {
 		this.vendorId = vendorId;
 	}
+	/**
+	* retrieves a value to the property quantity.
+    *
+    * @return      A string value.
+    *             The quantity of Product.
+    */
 	public String getQuantity() {
 		return quantity;
 	}
+	/**
+	* Sets a value to the property product quantity.
+    *
+    * @param      A string value.
+    *             The quantity of Product.
+    */
 	public void setQuantity(String quantity) {
 		this.quantity = quantity;
 	}
+	/**
+	* retrieves a value to the property description.
+    *
+    * @return      A string value.
+    *             The description of Product.
+    */
 	public String getDescription() {
 		return description;
 	}
+	/**
+	* Sets a value to the property product description.
+    *
+    * @param      A string value.
+    *             The description of Product.
+    */
 	public void setDescription(String description) {
 		this.description = description;
 	}
+	/**
+	* Sets a value to the property product image1.
+    *
+    * @param      A string value.
+    *             The image1 of Product.
+    */
 	public String getImage1() {
 		return image1;
 	}
+	/**
+	* retrieves a value to the property description.
+    *
+    * @return      A string value.
+    *             The description of Product.
+    */
 	public void setImage1(String image1) {
 		this.image1 = image1;
 	}
+
 	public String getImage2() {
 		return image2;
 	}
+	/**
+	* Sets a value to the property product image2.
+    *
+    * @param      A string value.
+    *             The image2 of Product.
+    */
 	public void setImage2(String image2) {
 		this.image2 = image2;
 	}
 	public String getImage3() {
 		return image3;
 	}
+	/**
+	* Sets a value to the property product image3.
+    *
+    * @param      A string value.
+    *             The image3 of Product.
+    */
 	public void setImage3(String image3) {
 		this.image3 = image3;
 	}
 	public String getImage4() {
 		return image4;
 	}
+	/**
+	* Sets a value to the property product image4.
+    *
+    * @param      A string value.
+    *             The image4 of Product.
+    */
 	public void setImage4(String image4) {
 		this.image4 = image4;
 	}
 	public String getImage5() {
 		return image5;
 	}
+	/**
+	* Sets a value to the property product image5.
+    *
+    * @param      A string value.
+    *             The image5 of Product.
+    */
 	public void setImage5(String image5) {
 		this.image5 = image5;
 	}

@@ -43,7 +43,7 @@ public class LoginServlet extends HttpServlet implements Serializable {
 		customer.setEmail(email);
 		customer.setPassword(password);
 		
-		CustomerDao customerDao = new CustomerDao();
+		CustomerDao customerDao = CustomerDao.getInstance();
 		
 		Product product = new Product();
 		

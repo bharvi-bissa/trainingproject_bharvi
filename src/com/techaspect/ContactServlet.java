@@ -30,7 +30,7 @@ public class ContactServlet extends HttpServlet {
 		String message = req.getParameter("message");
 		
 		
-		CustomerDao customerDao = new CustomerDao();
+		CustomerDao customerDao = CustomerDao.getInstance();
 		boolean status = customerDao.contact(fname,lname,email,subject,message);
 		
 		if(status) {

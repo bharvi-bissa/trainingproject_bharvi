@@ -1,3 +1,27 @@
+/*
+ * Copyright (c) 2018, TechAspect Solutions Private Limited. All Rights Reserved.
+ * TECHASPECT SOLUTIONS PRIVATE LIMITED PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ */
 package com.techaspect.dao;
 
 import java.sql.Connection;
@@ -15,8 +39,43 @@ import com.techaspect.entity.Customer;
 
 import org.apache.log4j.Logger;
 
+/**
+ * The CustomerDao class contains the database operations
+ * related code.
+ * 
+ * This class belongs to Customer Module. 
+ * 
+ * @author  Bharvi Bissa
+ */
 public class CustomerDao extends Dao {
+	
 	private final static Logger LOGGER = Logger.getLogger(CustomerDao.class);
+	
+	private static CustomerDao customerDao;
+	
+	private CustomerDao(){
+			System.out.println("CustomerDao");
+	}
+	
+	public static CustomerDao getInstance() {
+		if(customerDao==null) {
+			customerDao=new CustomerDao();
+			System.out.println("new instance");
+		}else {
+			System.out.println("old instance");
+		}
+		return customerDao;
+	}
+	
+	/**
+     * Inserts a new Customer Record in the Table.
+     *
+     * @param   customer
+     *          A Customer object containing data.
+     *
+     * @return  boolean
+     * 			true if record successfully inserted otherwise else.
+     */
 	public boolean insertCustomer(Customer customer) {
 		boolean status = false;
 		Connection con = null;
@@ -39,7 +98,6 @@ public class CustomerDao extends Dao {
 			if(rs.next()) {
 				status=false;
 			}else {
-				//String sql = "INSERT INTO customer_information(cust_fname,cust_lname,cust_email,cust_password) VALUES('"+customer.getFirstName()+"','"+customer.getLastName()+"','"+customer.getEmail()+"','"+customer.getPassword()+"')";
 				String sql = "INSERT INTO customer_information(cust_fname,cust_lname,cust_email,cust_password) VALUES(?,?,?,?)";
 				pStmt2 = openPreparedStatement(con,sql);
 				pStmt2.setString(1,customer.getFirstName());
@@ -52,7 +110,6 @@ public class CustomerDao extends Dao {
 				}
 			}
 		}catch(SQLException sqle) {
-			//sqle.printStackTrace();
 			LOGGER.error("Exception Occured.", sqle);
 		} finally {
 			closePreparedStatement(pStmt2);
@@ -65,6 +122,19 @@ public class CustomerDao extends Dao {
 		return status;
 	}
 	
+	/**
+     * Searches for a existing Customer Record in the Table.
+     * 
+     * Searching is done on the basis of Email Address & Password.
+     *
+     * also make an address object on the basis of address present in address table of that customer
+     * 
+     * @param   customer
+     *          A Customer object containing data.
+     *
+     * @return  boolean
+     * 		    true if matching record found otherwise else.
+     */
 	public boolean loginCustomer(Customer customer,Address address) {
 		LOGGER.debug("loginCustomer function started");
 		boolean status = false;
@@ -77,8 +147,7 @@ public class CustomerDao extends Dao {
 		try {
 			DataSource dataSource = getDataSource();
 			con = dataSource.getConnection();
-	
-			//String sql = "SELECT * FROM customer_information WHERE cust_email = '" + customer.getEmail() + "' AND cust_password='" + customer.getPassword() + "'";
+			
 			String sql = "select * from customer_information where cust_email = ? AND cust_password = ?";
 			pStmt = openPreparedStatement(con,sql);
 
@@ -114,7 +183,6 @@ public class CustomerDao extends Dao {
 			
 			
 		} catch(SQLException sqle) {
-			//sqle.printStackTrace();
 			LOGGER.error("Exception Occured.", sqle);
 		} finally {
 			closePreparedStatement(pStmt);
@@ -128,6 +196,19 @@ public class CustomerDao extends Dao {
 		
 	}
 	
+	/**
+     * Update the customer password in the table.
+     * 
+     * @param   customer
+     *          A Customer object containing data.
+     *          newPassword
+     *			String newPassword which is to be set
+     *			oldPassword
+     *			String oldPassword which is to be verified
+     *
+     * @return  boolean
+     * 		    true if matching existing oldPassword is found and password updated otherwise else.
+     */
 	public boolean changePassword(Customer customer,String newPassword,String oldPassword) {
 		LOGGER.debug(" changePassword execution started");
 		boolean status = false;
@@ -154,7 +235,6 @@ public class CustomerDao extends Dao {
 			}
 			
 		}catch(SQLException sqle) {
-			//sqle.printStackTrace();
 			LOGGER.error("Exception Occured.", sqle);
 		} finally {
 			closeStatement(stmt);
@@ -164,24 +244,37 @@ public class CustomerDao extends Dao {
 		return status;
 	}
 
+	/**
+     * Update the customer account in the table.
+     * 
+     * @param   customer
+     *          A Customer object containing data.
+     *          address
+     *			Address object which is to be set
+     *			addressData
+     *			Address object which was made in the loginCustomer method
+     *
+     * @return  boolean
+     * 		    true if 
+     * 				account successfully updated, 
+     * 				address successfully inserted/updated depending upon the existing addressData object
+     * 			false otherwise
+     */
 
 public boolean updateAccount(Customer customer,Address address, Address addressData) {
-	LOGGER.debug(" updateAccount execution started");
+	LOGGER.debug("updateAccount execution started");
 	boolean status = false;
 	Connection con = null;
 	Statement stmt = null;
-	ResultSet rs=null;
 	PreparedStatement pStmt=null;
 	PreparedStatement pStmt2=null;
 	PreparedStatement pStmt3=null;
 	
-	//String addressValue = address.getAddress();
 	try {
 		DataSource dataSource = getDataSource();
 		con = dataSource.getConnection();
 		
 		if(addressData.getAddress() == null){
-			//String sqlAddAddress = "INSERT into address_information(cust_id,add_address,add_zip,add_city,add_state,add_country) VALUES('"+customer.getId()+"','"+address.getAddress()+"','"+address.getZip()+"','"+address.getCity()+"','"+address.getState()+"','"+address.getCountry()+"')";
 			String sqlAddAddress = "INSERT into address_information(cust_id,add_address,add_zip,add_city,add_state,add_country) VALUES(?,?,?,?,?,?)";
 			pStmt2 = openPreparedStatement(con,sqlAddAddress);
 			pStmt2.setInt(1, customer.getId());
@@ -195,7 +288,6 @@ public boolean updateAccount(Customer customer,Address address, Address addressD
 				status = true;
 			}
 		}else {
-			//String sqlUpdateAddress = "UPDATE address_information SET add_address = '"+address.getAddress()+"',add_zip='"+address.getZip()+"',add_city='"+address.getCity()+"',add_state='"+address.getState()+"',add_country='"+address.getCountry()+"'WHERE cust_id="+customer.getId();
 			String sqlUpdateAddress = "UPDATE address_information SET add_address = ?,add_zip=?,add_city=?,add_state=?,add_country=? WHERE cust_id=?";
 			pStmt3 = openPreparedStatement(con,sqlUpdateAddress);
 			pStmt3.setString(1, address.getAddress());
@@ -210,7 +302,6 @@ public boolean updateAccount(Customer customer,Address address, Address addressD
 			   }
 		}
 		
-			//String sqlCustomer = "UPDATE customer_information SET cust_fname='"+customer.getFirstName()+"',cust_lname='"+customer.getLastName()+"',cust_email='"+customer.getEmail()+"',cust_contact='"+customer.getContact()+"',cust_gender='"+customer.getGender()+"'WHERE cust_id="+customer.getId();
 			String sqlCustomer = "UPDATE customer_information SET cust_fname=?,cust_lname=?,cust_email=?,cust_contact=?,cust_gender=? WHERE cust_id=?";
 			pStmt = openPreparedStatement(con,sqlCustomer);
 			pStmt.setString(1,customer.getFirstName());
@@ -226,15 +317,32 @@ public boolean updateAccount(Customer customer,Address address, Address addressD
 	
 		
 		}catch(SQLException sqle) {
-			//sqle.printStackTrace();
 			LOGGER.error("Exception Occured.", sqle);
 		} finally {
 			closeStatement(stmt);
 			closeConnection(con);
 		}
-		LOGGER.debug(" updateAccount execution ended");
+		LOGGER.debug("updateAccount execution ended");
 		return status;
 	}
+
+	/**
+	 * Add the contact information in the contact table.
+	 * 
+	 * @param   fname
+	 *          String fname.
+	 *          lname
+	 *          String lname.
+	 *          email
+	 *          String email.
+	 *          subject
+	 *          String subject.
+	 *          message
+	 *          String message.
+	 *
+	 * @return  boolean
+	 * 		    true if record inserted otherwise else.
+	 */
 
 	public boolean contact(String fname,String lname,String email,String subject,String message) {
 		boolean status = false;
@@ -252,7 +360,6 @@ public boolean updateAccount(Customer customer,Address address, Address addressD
 				status = true;
 			}
 		} catch(SQLException sqle) {
-			//sqle.printStackTrace();
 			LOGGER.error("Exception Occured.", sqle);
 		} finally {
 			closeStatement(stmt);

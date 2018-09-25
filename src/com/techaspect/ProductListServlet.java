@@ -22,7 +22,7 @@ public class ProductListServlet extends HttpServlet {
 
 	@Override
 	public void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		VendorDao vendorDao = new VendorDao();
+		VendorDao vendorDao = VendorDao.getInstance();
 		HttpSession session = request.getSession();
 		Vendor vendor = (Vendor)session.getAttribute("VENDORDATA");
 		List<Product> productList = vendorDao.displayAllProducts(vendor.getId());

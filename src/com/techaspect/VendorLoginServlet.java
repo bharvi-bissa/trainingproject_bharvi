@@ -22,7 +22,7 @@ public class VendorLoginServlet extends HttpServlet {
 		vendor.setEmail(email);
 		vendor.setPassword(password);
 		
-		VendorDao vendorDao = new VendorDao();
+		VendorDao vendorDao = VendorDao.getInstance();
 		boolean status = vendorDao.loginVendor(vendor);
 		
 		if(status) {

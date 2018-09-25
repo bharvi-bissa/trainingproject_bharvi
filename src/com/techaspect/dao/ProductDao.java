@@ -1,3 +1,28 @@
+/*
+ * Copyright (c) 2018, TechAspect Solutions Private Limited. All Rights Reserved.
+ * TECHASPECT SOLUTIONS PRIVATE LIMITED PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ */
+
 package com.techaspect.dao;
 
 import java.sql.Connection;
@@ -10,18 +35,47 @@ import java.util.List;
 import javax.sql.DataSource;
 
 import com.techaspect.entity.Product;
-import com.techaspect.entity.Vendor;
-import com.mysql.jdbc.PreparedStatement;
 import com.techaspect.dao.Dao;
 import org.apache.log4j.Logger;
+
+
+/**
+ * The ProductDao class contains the database operations
+ * related code.
+ * 
+ * This class belongs to Customer Module. 
+ * 
+ * @author  Bharvi Bissa
+ */
 
 public class ProductDao extends Dao {
 	
 	private final static Logger LOGGER = Logger.getLogger(ProductDao.class);
 	
+	private static ProductDao productDao;
+	
+	private ProductDao(){
+			System.out.println("ProductDao");
+	}
+	
+	public static ProductDao getInstance() {
+		if(productDao==null) {
+			productDao=new ProductDao();
+			System.out.println("new instance");
+		}else {
+			System.out.println("old instance");
+		}
+		return productDao;
+	}
+	/**
+     * Retrieves all the products.
+     *
+     *@return  List
+     * 			List of all the products.
+     */
 	public List<Product> getAllProducts() {
 		
-		LOGGER.debug(" getAllProducts execution started");
+		LOGGER.debug("getAllProducts execution started");
 		
 		ArrayList<Product> productList = new ArrayList<>();
 		
@@ -158,14 +212,14 @@ public class ProductDao extends Dao {
 				productList.add(product);
 			}
 		} catch(SQLException sqle) {
-			//sqle.printStackTrace();
+		
 			LOGGER.error("Exception Occured.", sqle);
 		} finally {
 			closeResultSet(rs);
 			closeStatement(stmt);
 			closeConnection(con);
 		}
-		LOGGER.debug(" getAllProducts execution ended");
+		LOGGER.debug("getAllProducts execution ended");
 		return productList;
 	}
 }

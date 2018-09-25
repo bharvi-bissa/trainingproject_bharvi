@@ -53,7 +53,7 @@ public class UpdateAccount extends HttpServlet {
 			 address.setId(addressData.getId());
 			 address.setCust_id(customerData.getId());
 		 }
-		 CustomerDao customerDao = new CustomerDao();
+		 CustomerDao customerDao = CustomerDao.getInstance();
 		 boolean status = customerDao.updateAccount(customer, address,addressData);
 		 if(status) {
 			session.setAttribute("CUSTOMERDATA",customer);
